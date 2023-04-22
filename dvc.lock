@@ -32,7 +32,7 @@ stages:
       nfiles: 4
     - path: src/train.py
       md5: 4894d7536ca0f4a1a449ff44fd228adf
-      size: 1658
+      size: 1715
     params:
       params.yaml:
         data:
@@ -43,6 +43,7 @@ stages:
           hyperparameters:
             svm__kernel:
             - linear
+            - rbf
             svm__C:
             - 0.1
             - 1
@@ -57,11 +58,11 @@ stages:
             verbose: 3
     outs:
     - path: model/svm
-      md5: ba0c50b412f6b5d5c5bd6c0ef163b1a1
-      size: 148163
+      md5: 3c0e38842fdbc0afce2ab02857a11944
+      size: 142650
     - path: model/svm.mlem
-      md5: 3e7f2947de87d4500fb0dff8c1311555
-      size: 1263
+      md5: e306f4d25877b05c1c765940f2fad758
+      size: 1325
   evaluate:
     cmd: python src/evaluate.py
     deps:
@@ -70,11 +71,11 @@ stages:
       size: 194875
       nfiles: 4
     - path: model/svm
-      md5: ba0c50b412f6b5d5c5bd6c0ef163b1a1
-      size: 148163
+      md5: 3c0e38842fdbc0afce2ab02857a11944
+      size: 142650
     - path: src/evaluate.py
       md5: 912aac9c6e00b70858f1d47bd16e51a0
-      size: 803
+      size: 830
     params:
       params.yaml:
         data:
@@ -83,5 +84,5 @@ stages:
         model: model/svm
     outs:
     - path: dvclive/metrics.json
-      md5: d71ae0196bba8e553dbad618e306517b
-      size: 28
+      md5: 62b3730eec31d2778145d46759a8a45f
+      size: 29
