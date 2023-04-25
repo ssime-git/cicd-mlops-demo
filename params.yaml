@@ -10,6 +10,7 @@ train:
     svm__kernel:
     - linear
     - rbf # add for experiment
+    - sigmoid # for experiment2
     svm__C:
     - 0.1
     - 1
