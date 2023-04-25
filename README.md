@@ -87,7 +87,7 @@ Follow these steps to push your data and model to an S3 bucket:
 
 1. [Create an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html)
 2. Ensure [your S3 credentials are store locally](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html#cli-configure-files-methods).
-3. Add the URI of your S3 bucket to the `.dvc/config` file
+3. Replace the URI of your S3 bucket to the `.dvc/config` file
 
 ![](demo_images/add_bucket.png)
 4. Push changes a remote location called `read-write` using:
